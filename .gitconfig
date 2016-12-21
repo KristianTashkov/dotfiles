@@ -1,0 +1,48 @@
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = auto
+[alias]
+    # Shorten some often used commands
+    b = branch
+    c = commit
+    co = checkout
+    com = checkout master
+    ss = status
+    s = status -s
+    ds = diff --staged
+    amend = commit --amend -c HEAD
+    oops = reset --soft HEAD~1
+    pullr = pull --rebase
+    ignore = !git update-index --assume-unchanged
+    unignore = !git update-index --no-assume-unchanged
+    ignored = !git ls-files -v | grep "^[[:lower:]]"
+    undo = reset --soft HEAD^
+    squash = rebase -i
+
+    # various pretty loggers from various places
+    l = log --pretty=oneline --abbrev-commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+    lc = log ORIG_HEAD.. --stat --no-merges
+    # from http://blog.kfish.org/2010/04/git-lola.html
+    lol = log --graph --decorate --pretty=oneline --abbrev-commit
+    lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+    ll = log --graph --date=short
+[push]
+	default = current
+[filter "media"]
+	clean = git media clean %f
+	smudge = git media smudge %f
+	required = true
+
+# local user config, usernames, etc
+[include]
+    path=~/.gitconfig-local
+[user]
+	name = KristianTashkov
+	email = kristian@hyperscience.com
+[diff]
+    tool = kdiff3
+	guitool = kdiff3
