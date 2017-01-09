@@ -13,8 +13,4 @@ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 ln -s `pwd`/.tmux.conf ~/.tmux.conf
 ln -s `pwd`/.gitconfig ~/.gitconfig
 ln -s $DIR/.vimrc ~/.vimrc
-if [ "$(uname)" == "Darwin" ]; then
-    ln -s `pwd`/.bashrc ~/.bashrc
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-    ln -s `pwd`/.bashrc ~/.extrabashrc
-fi
+ln -s `pwd`/.bashrc ~/.bashrc.all
