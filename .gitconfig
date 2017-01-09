@@ -32,6 +32,8 @@
     ll = log --graph --date=short
 [push]
 	default = current
+[pull]
+    default = current
 [filter "media"]
 	clean = git media clean %f
 	smudge = git media smudge %f
@@ -40,9 +42,6 @@
 # local user config, usernames, etc
 [include]
     path=~/.gitconfig-local
-[user]
-	name = KristianTashkov
-	email = kristian@hyperscience.com
 [diff]
     tool = kdiff3
 	guitool = kdiff3
