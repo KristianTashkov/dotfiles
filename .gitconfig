@@ -8,6 +8,7 @@
     # Shorten some often used commands
     b = branch
     c = commit
+    p = push
     co = checkout
     com = checkout master
     ss = status
