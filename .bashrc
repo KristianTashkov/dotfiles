@@ -9,3 +9,5 @@ alias g='git'
 if [ -f ~/git-completion.bash  ]; then
  . ~/git-completion.bash
 fi
+
+eval "$(thefuck --alias)"
