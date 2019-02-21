@@ -19,7 +19,7 @@ vnoremap <C-K> :m '<-2<CR>gv=gv
 set  t_Co=256
 colorscheme ron
 set cursorline
-set colorcolumn=80
+set colorcolumn=100
 set hlsearch
 
 " Add cyrillic keymaping
