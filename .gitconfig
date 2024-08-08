@@ -46,3 +46,5 @@
 [diff]
     tool = kdiff3
 	guitool = kdiff3
+[core]
+	editor = vim
