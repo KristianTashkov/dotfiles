@@ -19,7 +19,7 @@ vnoremap <C-K> :m '<-2<CR>gv=gv
 set  t_Co=256
 colorscheme ron
 set cursorline
-set colorcolumn=100
+set colorcolumn=120
 set hlsearch
 
 " Add cyrillic keymaping
@@ -34,5 +34,10 @@ vnoremap <Leader>y "+y
 set scrolloff=8
 
 " Smart case insensitive search
-:set ignorecase
-:set smartcase
+nnoremap / /\v
+vnoremap / /\v
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+set showmatch
