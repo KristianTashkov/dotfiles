@@ -49,3 +49,5 @@
 	guitool = kdiff3
 [core]
 	editor = vim
+[pager]
+	log = false

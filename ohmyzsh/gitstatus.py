@@ -18,7 +18,7 @@ def get_tagname_or_hash():
     tags = check_output(tags_cmd).decode('utf-8').split()
 
     if tags:
-        return tags[0] + ('+' if len(tags) > 1 else '')
+        return tags[0] + ('+' if len(tags) > 1 else '') + '/' + hash_
     elif hash_:
         return hash_
     return None
@@ -47,6 +47,8 @@ if po.returncode != 0:
 untracked, staged, changed, conflicts = [], [], [], []
 ahead, behind = 0, 0
 status = [(line[0], line[1], line[2:]) for line in stdout.decode('utf-8').splitlines()]
+
+
 for st in status:
     if st[0] == '#' and st[1] == '#':
         if re.search('Initial commit on', st[2]) or re.search('No commits yet on', st[2]):
@@ -86,8 +88,12 @@ if not changed and not staged and not conflicts and not untracked:
 else:
     clean = 0
 
+hash_cmd = ['git', 'rev-parse', '--short', 'HEAD']
+short_hash = check_output(hash_cmd).decode('utf-8').strip()
+
 out = ' '.join([
     branch,
+    short_hash,
     str(ahead),
     str(behind),
     str(len(staged)),
