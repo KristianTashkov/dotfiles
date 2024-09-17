@@ -37,17 +37,27 @@
 [pull]
     default = current
 [filter "media"]
-	clean = git media clean %f
-	smudge = git media smudge %f
-	required = true
+    clean = git media clean %f
+    smudge = git media smudge %f
+    required = true
 
 # local user config, usernames, etc
 [include]
     path=~/.gitconfig-local
 [diff]
     tool = kdiff3
-	guitool = kdiff3
+    guitool = kdiff3
 [core]
-	editor = vim
+    pager = delta
+    editor = vim
 [pager]
-	log = false
+    log = false
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    line-numbers = true
+    navigate = true
+    dark = true
+    side-by-side = true
+    hyperlinks = true
+    hyperlinks-file-link-format = "vscode://file/{path}:{line}"
