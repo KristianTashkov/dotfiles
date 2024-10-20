@@ -1,3 +1,4 @@
+source /opt/homebrew/share/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -73,6 +74,9 @@ ZSH_THEME="kris"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+
+alias ls='eza'
+alias cat='bat --paging=never'
 
 # User configuration
 

@@ -14,6 +14,8 @@ ln -s `pwd`/ohmyzsh/gitstatus.py ~/.oh-my-zsh/themes/gitstatus.py
 ln -s `pwd`/ohmyzsh/kris.zsh-theme ~/.oh-my-zsh/themes/kris.zsh-theme
 
 # symlinks
+rm ~/.tmux.conf
+rm ~/.zshrc
 ln -s $DIR/.tmux.conf ~/.tmux.conf
 ln -s $DIR/.gitconfig ~/.gitconfig
 ln -s $DIR/.vimrc ~/.vimrc
