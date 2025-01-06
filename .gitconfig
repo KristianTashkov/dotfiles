@@ -17,6 +17,7 @@
     amend = commit --amend -c HEAD
     oops = reset --soft HEAD~1
     pullr = pull --rebase
+    pullm = pull --no-rebase
     ignore = !git update-index --assume-unchanged
     unignore = !git update-index --no-assume-unchanged
     ignored = !git ls-files -v | grep "^[[:lower:]]"
